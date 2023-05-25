@@ -25,10 +25,13 @@ export const cartSlice = createSlice({
     deleteFromCart: (state, { payload }) => {
       state.items = state.items.filter(item => item._id !== payload._id);
     },
+    deleteAllCart: (state, { payload }) => {
+      state.items = [];
+    },
   },
 });
 
-export const { addToCart, deleteFromCart } = cartSlice.actions;
+export const { addToCart, deleteFromCart, deleteAllCart } = cartSlice.actions;
 
 //persictor
 const persistConfig = {

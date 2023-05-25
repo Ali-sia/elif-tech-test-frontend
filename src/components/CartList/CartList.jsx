@@ -3,10 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteFromCart } from '../../redux/cart/cartSlice';
 import { getCart } from '../../redux/cart/cartSelectors';
 
-const CartList = ({ setVariant }) => {
+const CartList = ({ cart }) => {
   const dispatch = useDispatch();
-
-  const cart = useSelector(getCart);
 
   const handleDeleteFromCart = item => {
     dispatch(deleteFromCart(item));
