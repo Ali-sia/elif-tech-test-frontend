@@ -1,3 +1,5 @@
+import ShopList from 'components/ShopList/ShopList';
+
 const ShopPage = () => {
   return (
     <div>
@@ -9,6 +11,8 @@ const ShopPage = () => {
         Also, when you follow someone, you will see it. For convenience, there
         is a filter by subscriptions.
       </p>
+
+      <ShopList />
     </div>
   );
 };
