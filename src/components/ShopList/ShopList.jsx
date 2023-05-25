@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getShopsList } from '../../redux/shop/shopSelectors';
 import { fetchShops } from 'redux/shop/shopOperations';
-import { useState, useEffect } from 'react';
-
-import { Box } from '../Box';
+import { useEffect } from 'react';
 
 const ShopList = ({ setVariant }) => {
   const dispatch = useDispatch();
