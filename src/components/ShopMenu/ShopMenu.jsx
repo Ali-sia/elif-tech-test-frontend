@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getShopMenu } from '../../redux/menu/menuSelectors';
 import { fetchShopMenu } from 'redux/menu/menuOperations';
 
-import { getCart } from '../../redux/cart/cartSelectors';
 import { addToCart } from '../../redux/cart/cartSlice';
-
-import { Box } from '../Box';
 
 const ShopMenu = ({ shopId }) => {
   const dispatch = useDispatch();

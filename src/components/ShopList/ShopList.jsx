@@ -8,8 +8,6 @@ import { Box } from '../Box';
 const ShopList = ({ setVariant }) => {
   const dispatch = useDispatch();
 
-  //   console.log('---> ~ ShopList ~ variant:', variant);
-
   useEffect(() => {
     dispatch(fetchShops());
   }, [dispatch]);
