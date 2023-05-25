@@ -1,8 +1,7 @@
-import {
-  useEffect,
-  // , useState
-} from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import toast from 'react-hot-toast';
 
 import { getShopMenu } from '../../redux/menu/menuSelectors';
 import { fetchShopMenu } from 'redux/menu/menuOperations';
@@ -13,27 +12,34 @@ import { getCart } from '../../redux/cart/cartSelectors';
 const ShopMenu = ({ shopId }) => {
   const dispatch = useDispatch();
   const cart = useSelector(getCart);
-  // const [isOneShop, setIsOneShop] = useState(true);
+  const [showToaster, setShowToaster] = useState(false);
 
   useEffect(() => {
     dispatch(fetchShopMenu(shopId));
   }, [dispatch, shopId]);
 
-  const menu = useSelector(getShopMenu);
-  if (!menu) {
-    return null;
-  }
-
   const handleAddToCart = item => {
     const isAnotherShop = cart.find(test => test.owner !== item.owner);
 
     if (isAnotherShop) {
-      // setIsOneShop(false);
+      setShowToaster(true);
       return null;
     }
 
     dispatch(addToCart(item));
   };
+
+  useEffect(() => {
+    if (showToaster) {
+      toast.error('You can order from only one shop');
+      setShowToaster(false);
+    }
+  }, [showToaster]);
+
+  const menu = useSelector(getShopMenu);
+  if (!menu) {
+    return null;
+  }
 
   return (
     <>
