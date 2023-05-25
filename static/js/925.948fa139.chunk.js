@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkelif_tech_test_frontend=self.webpackChunkelif_tech_test_frontend||[]).push([[925],{2925:function(e,n,t){t.r(n);var s=t(184);n.default=function(){return(0,s.jsxs)("div",{children:[(0,s.jsx)("h3",{children:"404"}),(0,s.jsx)("h3",{children:"We can not find this page(("})]})}}}]);
+//# sourceMappingURL=925.948fa139.chunk.js.map
