@@ -4,14 +4,24 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 
 //state and slice for "contacts"
-const cartInitialState = [];
+const cartInitialState = {
+  items: [],
+};
 
 export const cartSlice = createSlice({
   name: 'cart',
   initialState: cartInitialState,
-  reducers: {},
+  reducers: {
+    addToCart: (state, action) => {
+      state.items.push(action.payload);
+    },
+    deleteFromCart: (state, action) => {
+      state.items = state.items.filter(item => item !== action.payload);
+    },
+  },
 });
 
+export const { addToCart, deleteFromCart } = cartSlice.actions;
 //persictor
 const persistConfig = {
   key: 'cart',
