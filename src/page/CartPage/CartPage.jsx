@@ -1,4 +1,7 @@
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import CartList from 'components/CartList/CartList';
 
 const CartPage = () => {
   return (
@@ -6,7 +9,7 @@ const CartPage = () => {
       <NavLink to="/">
         <button>Back</button>
       </NavLink>
-      <h2>cart</h2>
+      <CartList />
     </div>
   );
 };
