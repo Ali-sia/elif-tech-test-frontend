@@ -20,13 +20,15 @@ const ShopList = ({ setVariant }) => {
   }, [shops, setVariant]);
 
   const handleVariantChange = event => {
-    setSelectedShop(event.target.value);
-    setVariant(event.target.value);
+    const selectedShopId = event.target.value;
+    setSelectedShop(selectedShopId);
+    setVariant(selectedShopId);
   };
 
   if (!shops) {
     return null;
   }
+
   return (
     <ul>
       {shops.map(shop => {
@@ -36,9 +38,9 @@ const ShopList = ({ setVariant }) => {
               <input
                 type="radio"
                 name="shop"
-                value={`${shop._id}`}
+                value={shop._id}
+                onChange={handleVariantChange}
                 checked={selectedShop === shop._id}
-                onClick={handleVariantChange}
               />
               {shop.name}
             </label>
