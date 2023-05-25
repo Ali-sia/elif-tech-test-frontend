@@ -18,7 +18,7 @@ const persistConfig = {
   storage,
 };
 
-export const persistedContactsReducer = persistReducer(
+export const persistedCartReducer = persistReducer(
   persistConfig,
   cartSlice.reducer
 );

@@ -2,9 +2,9 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import { shopReducer } from './shop/shopSlice';
 import { menuReducer } from './menu/menuSlice';
-import { ordersSlice } from './order/orderSlice';
+import { orderReducer } from './order/orderSlice';
 
-import { persistedCartReducer } from './slice';
+import { persistedCartReducer } from './cart/cartSlice';
 
 import {
   persistStore,
@@ -21,7 +21,7 @@ export const store = configureStore({
     cartItems: persistedCartReducer,
     shops: shopReducer,
     menus: menuReducer,
-    orders: ordersSlice.reducer,
+    orders: orderReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
@@ -32,4 +32,3 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
-
