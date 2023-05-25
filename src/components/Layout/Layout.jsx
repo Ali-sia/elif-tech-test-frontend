@@ -1,6 +1,8 @@
 import { Suspense } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 
+import toast, { Toaster } from 'react-hot-toast';
+
 import { GlobalStyle } from '../GlobalStyle';
 import { Box } from '../Box';
 
@@ -15,6 +17,8 @@ const Layout = () => {
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>
+
+        <Toaster position="top-right" reverseOrder={true} />
         <GlobalStyle />
       </Box>
     </>
