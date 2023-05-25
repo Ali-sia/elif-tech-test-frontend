@@ -27,6 +27,7 @@ const CartList = ({ setVariant }) => {
             <div>
               <h3>{item.name}</h3>
               <p>Price: {item.price}$</p>
+              <p>Quantity: {item.quantity}</p>
 
               <button type="button" onClick={() => handleDeleteFromCart(item)}>
                 DELETE
