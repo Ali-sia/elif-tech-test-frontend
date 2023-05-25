@@ -5,15 +5,20 @@ import { useState, useEffect } from 'react';
 
 import { Box } from '../Box';
 
-const ShopList = () => {
+const ShopList = ({ setVariant }) => {
   const dispatch = useDispatch();
+
+  //   console.log('---> ~ ShopList ~ variant:', variant);
 
   useEffect(() => {
     dispatch(fetchShops());
   }, [dispatch]);
 
   const shops = useSelector(getShopsList);
-  console.log('---> ~ ShopList ~ shops:', shops);
+
+  const handleVariantChange = event => {
+    setVariant(event.target.value);
+  };
 
   if (!shops) {
     return null;
@@ -23,8 +28,15 @@ const ShopList = () => {
       {shops.map(shop => {
         return (
           <li key={shop._id}>
-            <input type="radio" name="shop" value={`${shop.name}`} />
-            <span>{shop.name}</span>
+            <label>
+              <input
+                type="radio"
+                name="shop"
+                value={`${shop._id}`}
+                onClick={handleVariantChange}
+              />
+              {shop.name}
+            </label>
           </li>
         );
       })}

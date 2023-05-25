@@ -1,6 +1,11 @@
+import { useState, useEffect } from 'react';
+
 import ShopList from 'components/ShopList/ShopList';
 
 const ShopPage = () => {
+  const [variant, setVariant] = useState('');
+  console.log('---> ~ ShopPage ~ variant:', variant);
+
   return (
     <div>
       <h1>Welcome to page :)</h1>
@@ -12,7 +17,7 @@ const ShopPage = () => {
         is a filter by subscriptions.
       </p>
 
-      <ShopList />
+      <ShopList setVariant={setVariant} />
     </div>
   );
 };
