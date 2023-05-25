@@ -18,7 +18,7 @@ import {
 
 export const store = configureStore({
   reducer: {
-    cartItems: persistedCartReducer,
+    cart: persistedCartReducer,
     shops: shopReducer,
     menus: menuReducer,
     orders: orderReducer,
