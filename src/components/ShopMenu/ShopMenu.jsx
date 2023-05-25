@@ -1,7 +1,11 @@
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getShopMenu } from '../../redux/menu/menuSelectors';
 import { fetchShopMenu } from 'redux/menu/menuOperations';
-import { useState, useEffect } from 'react';
+
+import { getCart } from '../../redux/cart/cartSelectors';
+import { addToCart } from '../../redux/cart/cartSlice';
 
 import { Box } from '../Box';
 
@@ -13,10 +17,14 @@ const ShopMenu = ({ shopId }) => {
   }, [dispatch, shopId]);
 
   const menu = useSelector(getShopMenu);
-
   if (!menu) {
     return null;
   }
+
+  const handleAddToCart = itemId => {
+    dispatch(addToCart(itemId));
+  };
+
   return (
     <ul>
       {menu.map(item => {
@@ -29,6 +37,9 @@ const ShopMenu = ({ shopId }) => {
             <div>
               <h3>{item.name}</h3>
               <p>Price: {item.price}$</p>
+              <button type="button" onClick={() => handleAddToCart(item)}>
+                BUY
+              </button>
             </div>
           </li>
         );
