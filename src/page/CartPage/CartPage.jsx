@@ -18,7 +18,6 @@ const initValues = {
 const CartPage = () => {
   const dispatch = useDispatch();
   const cart = useSelector(getCart);
-  console.log('---> ~ CartPage ~ cart:', cart);
 
   const [values, setValues] = useState(initValues);
   const handleChange = event => {
