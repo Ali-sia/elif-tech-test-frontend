@@ -18,6 +18,7 @@ const initValues = {
 const CartPage = () => {
   const dispatch = useDispatch();
   const cart = useSelector(getCart);
+  console.log('---> ~ CartPage ~ cart:', cart);
 
   const [values, setValues] = useState(initValues);
   const handleChange = event => {
@@ -28,6 +29,9 @@ const CartPage = () => {
     }));
   };
 
+  if (!cart) {
+    return null;
+  }
   const createOrder = async event => {
     const newOrder = {
       client: values,
@@ -39,6 +43,8 @@ const CartPage = () => {
     dispatch(deleteAllCart());
     setValues(initValues);
   };
+
+  const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
 
   return (
     <div>
@@ -95,6 +101,7 @@ const CartPage = () => {
           />
         </label>
         <CartList cart={cart} />
+        <h3>Total price: {totalPrice}$</h3>
         <button type="submit" onClick={event => createOrder(event)}>
           Submit
         </button>
