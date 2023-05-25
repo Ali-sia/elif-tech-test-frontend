@@ -1,10 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+
+import { addOrder } from 'redux/order/orderOperations';
 import { getCart } from '../../redux/cart/cartSelectors';
 import { deleteAllCart } from 'redux/cart/cartSlice';
 
-import ClientForm from 'components/ClientForm/ClientForm';
 import CartList from 'components/CartList/CartList';
 
 const initValues = {
@@ -27,10 +28,14 @@ const CartPage = () => {
     }));
   };
 
-  const createOrder = event => {
-    event.preventDefault();
-    console.log('order created');
+  const createOrder = async event => {
+    const newOrder = {
+      client: values,
+      orderItems: cart,
+    };
 
+    event.preventDefault();
+    await dispatch(addOrder(newOrder));
     dispatch(deleteAllCart());
     setValues(initValues);
   };
