@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 
 import { GlobalStyle } from '../GlobalStyle';
 import { Box } from '../Box';
