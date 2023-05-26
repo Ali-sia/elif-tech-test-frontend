@@ -45,6 +45,18 @@ const CartPage = () => {
   }
 
   const createOrder = async event => {
+    console.log('----------', cart.length);
+
+    if (
+      values.name === '' ||
+      values.phone === '' ||
+      values.address === '' ||
+      cart.length === 0
+    ) {
+      toast.error('Choose something or you do not fill form!');
+      return null;
+    }
+
     const newOrder = {
       client: values,
       orderItems: cart,
