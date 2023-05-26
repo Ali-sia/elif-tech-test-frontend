@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
@@ -9,6 +8,16 @@ import { deleteAllCart } from 'redux/cart/cartSlice';
 import toast from 'react-hot-toast';
 
 import CartList from 'components/CartList/CartList';
+import {
+  Form,
+  InnerForm,
+  TotalPrice,
+  StyledButton,
+  Label,
+  Input,
+  InputName,
+  SummaryContainer,
+} from './CartPage.styled';
 
 const initValues = {
   name: '',
@@ -52,64 +61,70 @@ const CartPage = () => {
 
   return (
     <div>
-      <NavLink to="/">
-        <button>Back</button>
-      </NavLink>
-      <form>
-        <label>
-          <span>Name</span>
-          <input
-            type="text"
-            name="name"
-            placeholder="Edit your name"
-            value={values.name}
-            onChange={event => {
-              handleChange(event);
-            }}
-          />
-        </label>
-        <label>
-          <span>phone</span>
-          <input
-            type="text"
-            name="phone"
-            placeholder="Edit your phone"
-            value={values.phone}
-            onChange={event => {
-              handleChange(event);
-            }}
-          />
-        </label>
-        <label>
-          <span>email</span>
-          <input
-            type="text"
-            name="email"
-            placeholder="Edit your email"
-            value={values.email}
-            onChange={event => {
-              handleChange(event);
-            }}
-          />
-        </label>
-        <label>
-          <span>address</span>
-          <input
-            type="text"
-            name="address"
-            placeholder="Edit your address"
-            value={values.address}
-            onChange={event => {
-              handleChange(event);
-            }}
-          />
-        </label>
-        <CartList cart={cart} />
-        <h3>Total price: {totalPrice}$</h3>
-        <button type="submit" onClick={event => createOrder(event)}>
-          Submit
-        </button>
-      </form>
+      <InnerForm>
+        <Form>
+          <Label>
+            <InputName>Name</InputName>
+            <Input
+              type="text"
+              name="name"
+              placeholder="Edit your name"
+              value={values.name}
+              required
+              onChange={event => {
+                handleChange(event);
+              }}
+            />
+          </Label>
+          <Label>
+            <InputName>Phone</InputName>
+            <Input
+              type="text"
+              name="phone"
+              placeholder="Edit your phone"
+              value={values.phone}
+              required
+              onChange={event => {
+                handleChange(event);
+              }}
+            />
+          </Label>
+          <Label>
+            <InputName>Email</InputName>
+            <Input
+              type="text"
+              name="email"
+              placeholder="Edit your email"
+              value={values.email}
+              onChange={event => {
+                handleChange(event);
+              }}
+            />
+          </Label>
+          <Label>
+            <InputName>Address</InputName>
+            <Input
+              type="text"
+              name="address"
+              required
+              placeholder="Edit your address"
+              value={values.address}
+              onChange={event => {
+                handleChange(event);
+              }}
+            />
+          </Label>
+        </Form>
+        <div>
+          <CartList cart={cart} />
+        </div>
+      </InnerForm>
+      <SummaryContainer>
+        <TotalPrice>Total price: {totalPrice}$</TotalPrice>
+        <StyledButton type="submit" onClick={event => createOrder(event)}>
+          Create order
+        </StyledButton>
+      </SummaryContainer>
     </div>
   );
 };

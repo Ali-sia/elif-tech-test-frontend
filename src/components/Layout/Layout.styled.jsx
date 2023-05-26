@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const StyledNavLink = styled(NavLink)`
   color: #000000;
 
+  font-size: ${p => p.theme.fontSizes.l};
   padding: ${p => p.theme.space[3]}px;
   border-radius: ${p => p.theme.radii.sm};
   text-decoration: none;

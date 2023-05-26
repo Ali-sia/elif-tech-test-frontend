@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const StyledCartList = styled.ul``;
+export const StyledCartList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 export const CartItem = styled.li`
   border: ${p => p.theme.borders.normal} ${p => p.theme.colors.black};
@@ -9,9 +12,9 @@ export const CartItem = styled.li`
 
   width: ${p => p.theme.space[8] + 44}px;
 
-  &:not(:last-child) {
-    margin-bottom: ${p => p.theme.space[4]}px;
-  }
+  margin-bottom: ${p => p.theme.space[2]}px;
+
+  margin-right: ${p => p.theme.space[2]}px;
 `;
 
 export const PhotoHolder = styled.div`

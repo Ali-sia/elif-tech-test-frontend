@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const MenuList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+
   height: 100vh;
 
   padding: ${p => p.theme.space[5] - 6}px;
@@ -14,9 +17,8 @@ export const MenuItem = styled.li`
 
   width: ${p => p.theme.space[8] + 44}px;
 
-  &:not(:last-child) {
-    margin-bottom: ${p => p.theme.space[4]}px;
-  }
+  margin-bottom: ${p => p.theme.space[2]}px;
+  margin-right: ${p => p.theme.space[2]}px;
 `;
 export const PhotoHolder = styled.div`
   width: 100%;
