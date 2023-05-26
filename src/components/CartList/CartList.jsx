@@ -1,5 +1,15 @@
 import { useDispatch } from 'react-redux';
 
+import {
+  StyledCartList,
+  CartItem,
+  PhotoHolder,
+  ItemInfo,
+  ItemTitle,
+  ItemPrice,
+  ItemQuantity,
+  StyledButton,
+} from './CartList.styled';
 import { deleteFromCart } from '../../redux/cart/cartSlice';
 
 const CartList = ({ cart }) => {
@@ -13,27 +23,34 @@ const CartList = ({ cart }) => {
     return null;
   }
   return (
-    <ul>
+    <StyledCartList>
       {cart.map(item => {
         return (
-          <li key={item._id}>
-            <div>
+          <CartItem key={item._id}>
+            <PhotoHolder>
               {item.photo && <img src={item.photo} alt="" />}
               photo
-            </div>
-            <div>
-              <h3>{item.name}</h3>
-              <p>Price: {item.price}$</p>
-              <p>Quantity: {item.quantity}</p>
+            </PhotoHolder>
+            <ItemInfo>
+              <ItemTitle>{item.name}</ItemTitle>
+              <ItemPrice>
+                Price: <b>{item.price}$</b>
+              </ItemPrice>
+              <ItemQuantity>
+                Quantity: <b>{item.quantity}</b>
+              </ItemQuantity>
 
-              <button type="button" onClick={() => handleDeleteFromCart(item)}>
+              <StyledButton
+                type="button"
+                onClick={() => handleDeleteFromCart(item)}
+              >
                 DELETE
-              </button>
-            </div>
-          </li>
+              </StyledButton>
+            </ItemInfo>
+          </CartItem>
         );
       })}
-    </ul>
+    </StyledCartList>
   );
 };
 
