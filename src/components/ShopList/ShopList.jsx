@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getShopsList } from '../../redux/shop/shopSelectors';
+import { getShopsList, getShopsLoading } from '../../redux/shop/shopSelectors';
 import { fetchShops } from 'redux/shop/shopOperations';
 import { useEffect, useState } from 'react';
 
 const ShopList = ({ setVariant }) => {
   const dispatch = useDispatch();
   const shops = useSelector(getShopsList);
+  const isLoading = useSelector(getShopsLoading);
   const [selectedShop, setSelectedShop] = useState(null);
 
   useEffect(() => {
@@ -31,6 +32,7 @@ const ShopList = ({ setVariant }) => {
 
   return (
     <ul>
+      {isLoading && <h2>loading...</h2>}
       {shops.map(shop => {
         return (
           <li key={shop._id}>

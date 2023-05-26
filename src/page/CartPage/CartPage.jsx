@@ -6,6 +6,8 @@ import { addOrder } from 'redux/order/orderOperations';
 import { getCart } from '../../redux/cart/cartSelectors';
 import { deleteAllCart } from 'redux/cart/cartSlice';
 
+import toast from 'react-hot-toast';
+
 import CartList from 'components/CartList/CartList';
 
 const initValues = {
@@ -20,6 +22,7 @@ const CartPage = () => {
   const cart = useSelector(getCart);
 
   const [values, setValues] = useState(initValues);
+
   const handleChange = event => {
     const { name, value } = event.target;
     setValues(prevValues => ({
@@ -31,6 +34,7 @@ const CartPage = () => {
   if (!cart) {
     return null;
   }
+
   const createOrder = async event => {
     const newOrder = {
       client: values,
@@ -39,6 +43,7 @@ const CartPage = () => {
 
     event.preventDefault();
     await dispatch(addOrder(newOrder));
+    toast.success('Your order on road');
     dispatch(deleteAllCart());
     setValues(initValues);
   };
