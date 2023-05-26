@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledShopList = styled.ul`
-  overflow-y: auto;
-  width: ${p => p.theme.space[8]}px;
+  width: ${p => p.theme.space[8] + 100}px;
   min-height: 100vh;
 
   padding: ${p => p.theme.space[5] - 6}px;
