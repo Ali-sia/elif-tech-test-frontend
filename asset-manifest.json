@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/elif-tech-test-frontend/static/css/main.4584f192.css",
-    "main.js": "/elif-tech-test-frontend/static/js/main.a5dafc73.js",
+    "main.js": "/elif-tech-test-frontend/static/js/main.e2eebb93.js",
     "static/js/781.ebc234f2.chunk.js": "/elif-tech-test-frontend/static/js/781.ebc234f2.chunk.js",
-    "static/js/493.2edf9489.chunk.js": "/elif-tech-test-frontend/static/js/493.2edf9489.chunk.js",
+    "static/js/493.db4b66d3.chunk.js": "/elif-tech-test-frontend/static/js/493.db4b66d3.chunk.js",
     "static/js/925.948fa139.chunk.js": "/elif-tech-test-frontend/static/js/925.948fa139.chunk.js",
     "index.html": "/elif-tech-test-frontend/index.html",
     "main.4584f192.css.map": "/elif-tech-test-frontend/static/css/main.4584f192.css.map",
-    "main.a5dafc73.js.map": "/elif-tech-test-frontend/static/js/main.a5dafc73.js.map",
+    "main.e2eebb93.js.map": "/elif-tech-test-frontend/static/js/main.e2eebb93.js.map",
     "781.ebc234f2.chunk.js.map": "/elif-tech-test-frontend/static/js/781.ebc234f2.chunk.js.map",
-    "493.2edf9489.chunk.js.map": "/elif-tech-test-frontend/static/js/493.2edf9489.chunk.js.map",
+    "493.db4b66d3.chunk.js.map": "/elif-tech-test-frontend/static/js/493.db4b66d3.chunk.js.map",
     "925.948fa139.chunk.js.map": "/elif-tech-test-frontend/static/js/925.948fa139.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4584f192.css",
-    "static/js/main.a5dafc73.js"
+    "static/js/main.e2eebb93.js"
   ]
 }
