@@ -3,6 +3,8 @@ import { getShopsList, getShopsLoading } from '../../redux/shop/shopSelectors';
 import { fetchShops } from 'redux/shop/shopOperations';
 import { useEffect, useState } from 'react';
 
+import { StyledShopList, ShopItem, ShopLabel } from './ShopList.styled';
+
 const ShopList = ({ setVariant }) => {
   const dispatch = useDispatch();
   const shops = useSelector(getShopsList);
@@ -31,12 +33,12 @@ const ShopList = ({ setVariant }) => {
   }
 
   return (
-    <ul>
+    <StyledShopList>
       {isLoading && <h2>loading...</h2>}
       {shops.map(shop => {
         return (
-          <li key={shop._id}>
-            <label>
+          <ShopItem key={shop._id}>
+            <ShopLabel>
               <input
                 type="radio"
                 name="shop"
@@ -44,12 +46,12 @@ const ShopList = ({ setVariant }) => {
                 onChange={handleVariantChange}
                 checked={selectedShop === shop._id}
               />
-              {shop.name}
-            </label>
-          </li>
+              <span>{shop.name}</span>
+            </ShopLabel>
+          </ShopItem>
         );
       })}
-    </ul>
+    </StyledShopList>
   );
 };
 
