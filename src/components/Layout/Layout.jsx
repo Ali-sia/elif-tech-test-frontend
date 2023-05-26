@@ -14,7 +14,7 @@ const Layout = () => {
         <StyledNavLink to="/">Shop</StyledNavLink>
         <StyledNavLink to="/cart">Cart</StyledNavLink>
       </Header>
-      <Box padding={4} color="text" width="400px">
+      <Box color="text">
         <Suspense fallback={null}>
           <Outlet />
         </Suspense>

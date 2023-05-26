@@ -23,6 +23,6 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   height: ${p => p.theme.space[6] - 4}px;
-  padding: ${p => p.theme.space[5] - 6}px;
   background-color: ${p => p.theme.colors.secondary};
+  padding: ${p => p.theme.space[5] - 6}px;
 `;

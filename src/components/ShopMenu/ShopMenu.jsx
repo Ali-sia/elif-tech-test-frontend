@@ -2,6 +2,15 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import toast from 'react-hot-toast';
+import {
+  MenuList,
+  PhotoHolder,
+  ItemInfo,
+  ItemTitle,
+  ItemPrice,
+  StyledButton,
+  MenuItem,
+} from './ShopMenu.styled';
 
 import { getShopMenu } from '../../redux/menu/menuSelectors';
 import { fetchShopMenu } from 'redux/menu/menuOperations';
@@ -42,27 +51,27 @@ const ShopMenu = ({ shopId }) => {
   }
 
   return (
-    <>
-      <ul>
-        {menu.map((item, index) => {
-          return (
-            <li key={`${item._id}-${index}`}>
-              <div>
-                {item.photo && <img src={item.photo} alt="" />}
-                photo
-              </div>
-              <div>
-                <h3>{item.name}</h3>
-                <p>Price: {item.price}$</p>
-                <button type="button" onClick={() => handleAddToCart(item)}>
-                  BUY
-                </button>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-    </>
+    <MenuList>
+      {menu.map((item, index) => {
+        return (
+          <MenuItem key={`${item._id}-${index}`}>
+            <PhotoHolder>
+              {item.photo && <img src={item.photo} alt="" />}
+              photo
+            </PhotoHolder>
+            <ItemInfo>
+              <ItemTitle>{item.name}</ItemTitle>
+              <ItemPrice>
+                Price: <b>{item.price}$</b>
+              </ItemPrice>
+              <StyledButton type="button" onClick={() => handleAddToCart(item)}>
+                BUY
+              </StyledButton>
+            </ItemInfo>
+          </MenuItem>
+        );
+      })}
+    </MenuList>
   );
 };
 

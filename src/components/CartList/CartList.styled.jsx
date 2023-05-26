@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledCartList = styled.ul``;
-//   display: flex;
-//   align-items: center;
+
 export const CartItem = styled.li`
   border: ${p => p.theme.borders.normal} ${p => p.theme.colors.black};
   border-radius: ${p => p.theme.radii.md};
