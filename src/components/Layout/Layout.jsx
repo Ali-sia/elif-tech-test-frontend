@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import { Toaster } from 'react-hot-toast';
 
-import { SyledNavLink, Header } from './Layout.styled';
+import { StyledNavLink, Header } from './Layout.styled';
 import { GlobalStyle } from '../GlobalStyle';
 import { Box } from '../Box';
 
@@ -11,8 +11,8 @@ const Layout = () => {
   return (
     <>
       <Header>
-        <SyledNavLink to="/">Shop</SyledNavLink>
-        <SyledNavLink to="/cart">Cart</SyledNavLink>
+        <StyledNavLink to="/">Shop</StyledNavLink>
+        <StyledNavLink to="/cart">Cart</StyledNavLink>
       </Header>
       <Box padding={4} color="text" width="400px">
         <Suspense fallback={null}>

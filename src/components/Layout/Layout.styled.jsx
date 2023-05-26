@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const SyledNavLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink)`
   color: #000000;
 
   padding: ${p => p.theme.space[3]}px;
