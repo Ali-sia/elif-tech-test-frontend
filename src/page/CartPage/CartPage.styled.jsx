@@ -14,6 +14,7 @@ export const InnerForm = styled.div`
 `;
 export const TotalPrice = styled.h3`
   font-size: ${p => p.theme.fontSizes.l};
+  margin-right: ${p => p.theme.space[4]}px;
 `;
 
 export const StyledButton = styled.button`
@@ -43,8 +44,7 @@ export const Input = styled.input`
 `;
 export const SummaryContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
+  align-items: center;
+  justify-content: flex-end;
   padding: ${p => p.theme.space[4]}px;
 `;
