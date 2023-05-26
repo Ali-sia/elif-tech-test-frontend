@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledCartList = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  padding: ${p => p.theme.space[5] - 6}px;
 `;
 
 export const CartItem = styled.li`
