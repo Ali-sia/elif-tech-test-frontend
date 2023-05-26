@@ -16,6 +16,7 @@ export const MenuItem = styled.li`
   padding: ${p => p.theme.space[5] - 6}px;
 
   width: ${p => p.theme.space[8] + 44}px;
+  height: ${p => p.theme.space[8] + 90}px;
 
   margin-bottom: ${p => p.theme.space[2]}px;
   margin-right: ${p => p.theme.space[2]}px;
